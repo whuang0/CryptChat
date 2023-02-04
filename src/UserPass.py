@@ -1,8 +1,7 @@
 from encrypting import *
 from Crypto.Cipher import AES 
-username = 'candycane'
 password = ''
-username = encryption()
+username = encryption('candycane')
 nonce, cipherText, tag = username.encrypt()
 plainText = username.decrypt(nonce, cipherText, tag)
 

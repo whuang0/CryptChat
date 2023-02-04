@@ -4,9 +4,9 @@ from secrets import token_bytes
 
 class encryption:
 
-    def __init__(self):
-        self.target = ''
+    def __init__(self, target):
         self.key = token_bytes(16)
+        self.target = target
 
     def encrypt(self): # return nonce, cipher text and tag
         cipher = AES.new(self.key, AES.MODE_EAX) #cipher object
