@@ -37,4 +37,3 @@ z = {
 if (not has_a_duplicate(z)):
     write_json(z)
 
-has_a_duplicate(z)
