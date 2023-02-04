@@ -4,6 +4,16 @@
             "username": "Hans12",
             "email": "Hans22@gmail.com",
             "password": "hanspassword"
+        },
+        {
+            "username": "Hans72",
+            "email": "Hans42@gmail.com",
+            "password": "hanspassword"
+        },
+        {
+            "username": "Hans72",
+            "email": "Hans42@gmail.com",
+            "password": "hanspassword"
         }
     ]
 }
