@@ -1,3 +1,4 @@
+import json
 from Crypto.Cipher import AES 
 from secrets import token_bytes
 
@@ -18,6 +19,8 @@ def decrypt(nonce, cipherText, tag, key):
         return plainText.decode('ascii') 
     except:
         return False #cipher text is not authentic
+
+
     
 def main():
     

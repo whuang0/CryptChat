@@ -1,0 +1,24 @@
+{
+    "user_details": [
+        {
+            "username": "Shubham",
+            "email": "shransaha09@gmail.com",
+            "password": "password123"
+        },
+        {
+            "username": "Sharan",
+            "email": "sharansaha09@gmail.com",
+            "password": "password123"
+        },
+        {
+            "username": "Other sharan",
+            "email": "sharansaha07@gmail.com",
+            "password": "password1234"
+        },
+        {
+            "username": "Hans",
+            "email": "Hans@gmail.com",
+            "password": "hanspassword"
+        }
+    ]
+}
