@@ -9,6 +9,8 @@ import json
 with open("users.json", 'r') as file: 
         users = json.load(file)
         username = users["user_details"][0]["username"]
+
+        print(username)
 usernameObj = encryption(username)
 nonce, cipherText, tag = usernameObj.encrypt()
 plainText = usernameObj.decrypt(nonce, cipherText, tag)
@@ -31,11 +33,10 @@ if not plainText1:
 else: 
     print(f"Plaintext: {plainText1}")
 
-y = {"username":cipherText,
-    "email": "sharansaha07@gmail.com",
-    "password" : cipherText1
-    }
+# y = {"username":cipherText,
+#     "email": "sharansaha07@gmail.com",
+#     "password" : cipherText1
+#     }
 
-print(y)
 # cipherTextString = string(cipherText)
 # print(cipherTextString)
