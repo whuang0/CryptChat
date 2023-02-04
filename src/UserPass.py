@@ -2,6 +2,10 @@ from encrypting import *
 from Crypto.Cipher import AES 
 import json
 
+
+
+
+
 with open("users.json", 'r') as file: 
         users = json.load(file)
         username = users["user_details"][0]["username"]
@@ -26,3 +30,9 @@ if not plainText1:
     print("Message is corrupted")
 else: 
     print(f"Plaintext: {plainText1}")
+
+y = {"username":cipherText,
+    "email": "sharansaha07@gmail.com",
+    "password" : cipherText1
+    }
+

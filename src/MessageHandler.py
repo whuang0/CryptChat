@@ -1,11 +1,11 @@
-import json
+import pandas as pd
 from Crypto.Cipher import AES 
-from  secrets import token_bytes
+from secrets import token_bytes
 
 class MessageHandler: # Message Handler's purpose is to encrypt and decrypt messages.
     
    
-    def init(self, key, message): # this is the constructor that sets up an instance of the object (self) to handle messages 
+    def init(self, message): # this is the constructor that sets up an instance of the object (self) to handle messages 
         self.key = token_bytes(16) # each object will have a particular key that will be used for both encryption and decryption
         self.message = message # each object will have a message to encrypt 
         
