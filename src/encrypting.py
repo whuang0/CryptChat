@@ -4,7 +4,7 @@ from secrets import token_bytes
 
 class encryption:
 
-    def __init__(self, key, target):
+    def __init__(self):
         self.target = ''
         self.key = token_bytes(16)
 
