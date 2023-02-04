@@ -11,7 +11,8 @@ class encryption:
     def encrypt(self): # return nonce, cipher text and tag
         cipher = AES.new(self.key, AES.MODE_EAX) #cipher object
         nonce = cipher.nonce #the nonce 
-        cipherText, tag = cipher.encrypt_and_digest(self.target.encode('ascii')) 
+        cipherText, tag = cipher.encrypt_and_digest(self.target.encode('ascii'))
+         
         
         return nonce, cipherText, tag 
 
