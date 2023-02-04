@@ -4,18 +4,20 @@ from secrets import token_bytes
 
 class encryption:
 
-    def __init__(self, key):
+    def __init__(self, key, target):
+        self.target = ''
         self.key = token_bytes(16)
 
-    def encrypt(msg, key): # return nonce, cipher text and tag
-        cipher = AES.new(key, AES.MODE_EAX) #cipher object
+    def encrypt(self): # return nonce, cipher text and tag
+        cipher = AES.new(self.key, AES.MODE_EAX) #cipher object
         nonce = cipher.nonce #the nonce 
-        cipherText, tag = cipher.encrypt_and_digest(msg.encode('ascii')) 
+        cipherText, tag = cipher.encrypt_and_digest(self.target.encode('ascii'))
+         
         
         return nonce, cipherText, tag 
 
-    def decrypt(nonce, cipherText, tag, key):
-        cipher = AES.new(key, AES.MODE_EAX, nonce) 
+    def decrypt(self, nonce, cipherText, tag):
+        cipher = AES.new(self.key, AES.MODE_EAX, nonce) 
         plainText = cipher.decrypt(cipherText)
         
         #check to see if our text was changed
