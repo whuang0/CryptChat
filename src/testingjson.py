@@ -14,7 +14,7 @@ def has_a_duplicate(new_data, filename='users.json'):
     with open(filename, 'r') as file: 
         users = json.load(file)
 
-        print(new_data["email"])
+        #print(new_data["email"])
 
         for user in users["user_details"]:
             if (new_data["username"] in user["username"]) or (new_data["email"] in user["email"]) :
@@ -29,8 +29,8 @@ y = {"username":"Other sharan",
     "password" : "password1234"
     }
 z = {
-    "username":"Hans32",
-    "email":"Hans22@gmail.com",
+    "username":"Hans72",
+    "email":"Hans42@gmail.com",
     "password":"hanspassword"
 }
     
