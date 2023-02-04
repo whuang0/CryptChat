@@ -1,6 +1,13 @@
 from encrypting import *
 from Crypto.Cipher import AES 
-username = ''
+username = 'candycane'
 password = ''
+username = encryption()
+nonce, cipherText, tag = username.encrypt()
+plainText = username.decrypt(nonce, cipherText, tag)
 
-nonce, cipherText, tag = encrypt(password, key)
+print(f"Cipher text: {cipherText}")
+if not plainText: 
+    print("Message is corrupted")
+else: 
+    print(f"Plaintext: {plainText}")
