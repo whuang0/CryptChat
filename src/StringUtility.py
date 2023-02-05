@@ -26,46 +26,60 @@ def decipher(string):
 			new1 += chr((ord(ch1) - length - 97) % 26 + 97)
 	return new1
 
-def get_credentials(index):
+def get_credentials(email):
 	with open("users.json", "r") as file:
 		users = json.load(file)
-		username = users["user_details"][index]["username"]
-		email = users["user_details"][index]["email"]
-		password = users["user_details"][index]["password"]
-		return [username, email, password]
+		username = users.get(cipher(email))
+		password = users.get(cipher(email))
+		return [username, password]
 
-def override_to_encrypted(index):
-	encrypted_username = cipher(get_credentials(index)[0])
-	encrypted_email = cipher(get_credentials(index)[1])
-	encrypted_password = cipher(get_credentials(index)[2])
+def insert_credentials(email, username, password, msg):
+	encrypted_username = cipher(username)
+	encrypted_email = cipher(email)
+	encrypted_password = cipher(password)
+	encrypted_msg = cipher(msg)
 	with open("users.json", 'r+') as file:
-		users = json.load(file)
+		try:
+			users = json.load(file)
+		except:
+			users = {}
+		if(users.get(encrypted_email) != None):
+			print('user already exists')
+			return
 		file.seek(0)
-		users["user_details"][index].update({"username":(encrypted_username),"email" : (encrypted_email), "password" : (encrypted_password)})
+		users[encrypted_email] = {"username":encrypted_username, "password":encrypted_password, "msg":encrypted_msg}
 		json.dump(users, file, indent = 4)
-		file.truncate()
+	
+# def insert_msg_based_on_email(email,msg):
+# 	encrypted_email = cipher(email)
+# 	encrypted_msg = cipher(msg)
+# 	with open("users.json", 'r+') as file:
+# 		users = json.load(file)
+# 		file.seek(0)
+# 		users[encrypted_email] = {"msg":encrypted_msg}
+# 		json.dump(users, file, indent = 4)
 
-def retrieve_username(email):
+def retrieve_record(email):
 	cipheredEmail = cipher(email)
 	with open('users.json') as data_file:    
 		data = json.load(data_file)
-		print(data["user_details"][0])
-	for index in data["user_details"]:
-		print(data["user_details"][index][2])
-		# if(data["user_details"][index]["email"] != cipheredEmail):
-		# 	index = index + 1
-		# else:
-		# 	decrypted_username = decipher(get_credentials(index)[0])
-		# 	return decrypted_username
+		return data.get(cipheredEmail)
 
-def retrieve_password(index):
-	decrypted_password = decipher(get_credentials(index)[2])
-	return decrypted_password
+def insert_msgs_group(msg):
+	encrypted_msg = cipher(msg)
+	with open("group.json", 'r+') as file:
+		messages = json.load(file)
+		file.seek(0)
+		messages[encrypted_msg] = {"username":encrypted_msg}
+		json.dump(messages, file, indent = 4)
+		
+		json.dump(encrypted_msg, file, indent = 4)
 
 def main():
-	# override_to_encrypted(0)
-	# override_to_encrypted(1)
-	retrieve_username("s12@gmail.com")
+	insert_credentials("s123@gmail.com", "sharan", "pass",'')
+	insert_credentials("ab23@gmail.com", "andy", "pass2",'hello')
+	# insert_msgs_group("hello")
+	
 main()
 	
 		
