@@ -1,0 +1,100 @@
+body, html { margin:0; padding:0 }
+
+.header{
+    width:100%;
+    text-align:center;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+.footer{
+    position:fixed;  /*Setting up the position*/
+    bottom:0;   /*Just Stay at the bottom*/
+    left: 0;
+    right: 0;
+    height: 30px;
+    width:100%;   /*Cover the whole screen's width or the parent element's width*/
+}
+
+.icons{
+    display:inline-block;
+    margin: 0 auto;
+}
+.form_button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.form_button:hover {
+    background: var(--color-primary-dark);
+}
+
+.form_button:active {
+    transform: scale(0.98);
+}
+
+.form_text {
+    text-align: center;
+}
+
+
+
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.section {
+display: none;
+}
+
+.section.active {
+display: block;
+}
+
+.nav {
+list-style: none;
+margin:0;
+padding: 0;
+display: flex;
+align-items: center;
+}
+.nav button {
+background: #ccc;
+padding: 10px 15px;
+margin-left: 6px;
+border-radius: 50%;
+cursor: pointer;
+opacity: .5;
+border: none;
+}
+
+.next,
+.previous {
+padding: 15px 10px;
+border-radius: 6px;
+background: deepskyblue;
+color: white;
+border:0;
+outline: none;
+cursor: pointer;
+width: 100px;
+visibility: hidden;
+}
+
+.button-active {
+opacity: 1 !important;
+visibility: visible;
+}

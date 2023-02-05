@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <style>
+      body {
+        background-color: #474951;
+        min-width: 500px;
+        min-height: 400px;
+        max-height: none;
+        position: relative;
+        vertical-align: middle;
+      }
+
+      .header {
+        text-align: center;
+      }
+
+      .header img {
+        width: 350px;
+        height: 100px;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      input[type=text], input[type=password] {
+        width: 75%;
+        height: 40px;
+        padding: 5px;
+        font-size: 16px;
+        margin: 10px;
+      }
+
+      #submit-button {
+        width: 20%;
+        height: 40px;
+        font-size: 16px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="Full.png" />
+    </div>
+    <footer>
+      <form action="save_to_json.py" method="post">
+        <input type="text" placeholder="Email" name="email">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <input id="submit-button" type="submit" value="Sign Up">
+        
+      </form>
+    </footer>
+  </body>
+</html>
