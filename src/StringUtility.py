@@ -33,7 +33,7 @@ def get_credentials(email):
 		password = users.get(cipher(email))
 		return [username, password]
 
-def insert(email, username, password):
+def insert_credentials(email, username, password):
 	encrypted_username = cipher(username)
 	encrypted_email = cipher(email)
 	encrypted_password = cipher(password)
@@ -49,17 +49,24 @@ def insert(email, username, password):
 		users[encrypted_email] = {"username":encrypted_username, "password":encrypted_password}
 		json.dump(users, file, indent = 4)
 
-
-
 def retrieve_record(email):
 	cipheredEmail = cipher(email)
 	with open('users.json') as data_file:    
 		data = json.load(data_file)
 		return data.get(cipheredEmail)
 
+def insert_msgs(msg):
+	encrypted_msg = cipher(msg)
+	with open("group.json", 'r+') as file:
+		data = json.load(file)
+		file.seek(0)
+		json.dump(encrypted_msg, file, indent = 4)
+
+
 def main():
-	insert("s123@gmail.com", "sharan", "pass")
-	insert("ab23@gmail.com", "andy", "pass2")
+	insert_credentials("s123@gmail.com", "sharan", "pass")
+	insert_credentials("ab23@gmail.com", "andy", "pass2")
+	insert_msgs("hello")
 main()
 	
 		
