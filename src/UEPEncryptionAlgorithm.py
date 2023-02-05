@@ -27,19 +27,22 @@ class EncryptionAlgorithm:
         except:
             return False #cipher text is not authentic
 
+    def __str__(self):
+        return "hi"
+
 
         
-    # def main():
+# def main():
         
-    #     key = token_bytes(16) #creating a 16 byte key
-    #     nonce, cipherText, tag = encrypt(input("enter a message to encyrpt: "), key)
-    #     plainText = decrypt(nonce, cipherText, tag, key)
+#     target = EncryptionAlgorithm('candycane')
+#     nonce, cipherText, tag = target.encrypt()
+#     plainText = target.decrypt(nonce, cipherText, tag)
 
-    #     print(f"Cipher text: {cipherText}")
-    #     if not plainText: 
-    #         print("Message is corrupted")
-    #     else: 
-    #         print(f"Plaintext: {plainText}")
+#     print(f"Cipher text: {cipherText}")
+#     if not plainText: 
+#         print("Message is corrupted")
+#     else: 
+#         print(f"Plaintext: {plainText}")
             
-    # main()
+# main()
     

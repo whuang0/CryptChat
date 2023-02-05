@@ -1,10 +1,6 @@
-from encrypting import *
+from UEPEncryptionAlgorithm import *
 from Crypto.Cipher import AES 
 import json
-
-
-
-
 
 with open("users.json", 'r') as file: 
         users = json.load(file)
