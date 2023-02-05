@@ -1,32 +1,37 @@
+Login button checks a json file for username and password. If there is a username and password  in the json then go to friendpage.html.
+Otherwise output on the html screen that a error has occured.
 <!DOCTYPE html>
-<html>
-    <body style = "background-color: #474951;">
+  <html>
+      <body style = "background-color: #474951;">
   <head>
     <title>Encrypted Chat Extension</title>
-    <script src="popup.js"></script>
+    <div class = "header">
+      <center> <img src = "Full.png"
+        width = 350
+        height = 100/></center>
+    </div>  
   </head>
-  <body>
-<style type="text/css" >
-body {
-  min-width: 500px; /* your desired width */
-  max-width: 300%;
-  min-height: 400px;
-  max-height: none;
-  position: relative;
-  vertical-align:middle;
-}
-</style>
-        <!-- Conversation will be displayed here -->
-      </div class = "under">
-      
-      <div id="chatbox">
-        <div id="conversation">
-      <div id="input-container">
-        <input id="input-message" type="text" placeholder="Type here to chat">
-        <button id="send-button">Send</button>
-      </div>
-    </div>
+<body>
+  <div class = "main">  
+    <center><input id="input-message" type="text" placeholder="Username"></center> 
+    <center><input id="input-message" type="text" placeholder="Password"></center>
+    <center><button type = "form_button" class = "toggle-btn">Login</button></center>
+    <center><form action="register.html"><button type="submit" class="button">Register</button></form></center>
+
+    <form action="friendpage.html">
+    <button type="submit" class="button">Next</button>
+    </form>
+    <style type="text/css">
+  body {
+    min-width: 500px; /* your desired width */
+    max-width: 300%;
+    min-height: 400px;
+    max-height: none;
+    position: relative;
+    vertical-align:middle;
+  }
+  
+  </style>
   </body>
-</body>
 </html>
 

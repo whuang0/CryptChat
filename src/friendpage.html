@@ -1,0 +1,54 @@
+<!-- Create a List of buttons with people's names you added and a add button html file here -->
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <div class = "header">
+        <center> <img src = "Full.png"
+          width = 350
+          height = 100/></center>
+      </div>  
+    <title>Friend List</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .person-button {
+        width: 150px;
+        height: 50px;
+        margin: 10px;
+        font-size: 16px;
+      }
+    body {
+      background-color: #474951;
+      min-width: 500px;
+      min-height: 400px;
+      max-height: none;
+      position: relative;
+      vertical-align: middle;
+    }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+      <!-- Example buttons for people's names -->
+      <button class="person-button">Person 1</button>
+      <button class="person-button">Person 2</button>
+      <button class="person-button">Person 3</button>
+      <button class="person-button">Person 4</button>
+    </div>
+    <div class="container">
+      <!-- Add button -->
+      <button id="add-button">Add</button>
+    </div>
+
+    <form action="chatpage.html">
+        <button type="submit" class="button">Next</button>
+    </form>
+
+  </body>
+</html>
