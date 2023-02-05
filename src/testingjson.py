@@ -24,16 +24,16 @@ def has_a_duplicate(new_data, filename='users.json'):
 
         
 
-y = {"username":"Other sharan",
-    "email": "sharansaha07@gmail.com",
-    "password" : "password1234"
-    }
-z = {
-    "username":"Hans72",
-    "email":"Hans42@gmail.com",
-    "password":"hanspassword"
-}
+# y = {"username":"Other sharan",
+#     "email": "sharansaha07@gmail.com",
+#     "password" : "password1234"
+#     }
+# z = {
+#     "username":"Hans72",
+#     "email":"Hans42@gmail.com",
+#     "password":"hanspassword"
+# }
     
-if (not has_a_duplicate(z)):
-    write_json(z)
+# if (not has_a_duplicate(z)):
+#     write_json(z)
 

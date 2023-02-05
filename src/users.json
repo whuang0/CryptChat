@@ -1,19 +1,9 @@
 {
     "user_details": [
         {
-            "username": "Hans12",
-            "email": "Hans22@gmail.com",
-            "password": "hanspassword"
-        },
-        {
-            "username": "Hans72",
-            "email": "Hans42@gmail.com",
-            "password": "hanspassword"
-        },
-        {
-            "username": "Hans72",
-            "email": "Hans42@gmail.com",
-            "password": "hanspassword"
+            "username": "sharan",
+            "email": "sharansaha07@gmail.com",
+            "password": "sharanp"
         }
     ]
 }
