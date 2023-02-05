@@ -30,23 +30,23 @@
     </div>
     <div class="main">
       <center>
-        
-        <input id="usernameInput" type="text" placeholder ="Username">
+        <div style="width: 40%; padding: 20px; border-radius: 10px; background-color: #474951;">
+          <input id="usernameInput" type="text" placeholder="Username" style="width: 100%; padding: 15px; font-size: 20px; border-radius: 5px; border: none;">
+          <br><br>
+          <input id="passwordInput" type="password" placeholder="Password" style="width: 100%; padding: 15px; font-size: 20px; border-radius: 5px; border: none;">
+          <br><br>
+          <button id="loginButton" style="width: 100%; padding: 15px; font-size: 20px; border-radius: 5px; border: none; background-color: rgb(92, 92, 92); color: white;">Login</button>
+          <br><br>
+          <form action="register.html">
+            <button type="submit" style="width: 100%; padding: 15px; font-size: 20px; border-radius: 5px; border: none; background-color: rgb(92, 92, 92); color: white;">New User</button>
+          </form>
+          <br><br>
+          <form action="chatpage.html">
+            <button type="submit" style="width: 100%; padding: 15px; font-size: 20px; border-radius: 5px; border: none; background-color: rgb(92, 92, 92); color: white;">Chatroom</button>
+          </form>
+        </div>
       </center>
-      <center>
-        <input id="passwordInput" type="password" placeholder="Password">
-      </center>
-      <center>
-        <button id="loginButton">Login</button>
-      </center>
-      <center>
-        <form action="register.html">
-          <button type="submit">New User?</button>
-        </form>
-      </center>
-      <form action="chatpage.html">
-        <button type="submit">Chatroom</button>
-      </form>
+      
       <div id="errorMessage" class="error-message">Error: Login failed</div>
     </div>
 

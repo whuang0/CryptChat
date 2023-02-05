@@ -13,7 +13,7 @@
             }
           });
         });
-      </script>
+    </script>
     <style>
       body {
         background-color: #474951;
@@ -31,6 +31,17 @@
         text-align: center;
       }
 
+      .input-box {
+        width: 70%;
+        height: 50px;
+        font-size: 20px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 2px 2px 5px #333;
+      }
+
       .error-message {
         color: red;
         display: none;
@@ -45,21 +56,22 @@
     <div class="main">
         <form action="http://localhost/demo/save.php" method="post">
         <center>                       
-          <input id="email" type="text" placeholder="Email" name="email">
+          <input id="email" type="text" placeholder="Email" name="email" class="input-box">
         </center>
         <center>
-          <input id="username" type="text" placeholder="Username" name="username">
+          <input id="username" type="text" placeholder="Username" name="username" class="input-box">
         </center>
         <center>
-          <input id="password" type="password" placeholder="Password" name="password">
+          <input id="password" type="password" placeholder="Password" name="password" class="input-box">
         </center>
+        <br>
         <center>
-          <button id="registerButton" type="submit">Register</button>
+          <button id="registerButton" type="submit" style="font-size: 20px; padding: 10px 20px; border-radius: 10px;">Register</button>
         </center>
       </form>
       <form action="popup.html">
         <center>
-            <button type="submit">Back</button>
+            <button type="submit" style="font-size: 20px; padding: 10px 20px; border-radius: 10px;">Back</button>
         </center>
       </form>
       <div id="response"></div>
