@@ -27,18 +27,18 @@ def override_to_encrypted(index):
         json.dump(users, file, indent = 4)
         file.truncate()
         
-def retrieve_username(index):
+# def retrieve_username(index):
     
-    with open("users.json", "r") as file:
-        users = json.load(file)
-        encryptedUsername = users["user_details"][index]["username"]
+#     with open("users.json", "r") as file:
+#         user = json.load(file)
+#         encryptedUsername = user["user_details"][index]["username"]
         
-        myList= encrypt(encryptedUsername) #nonce
-        nonce = myList[1] 
-        tag = myList[3]
-        decryptedUsername = myList[0].decrypt(nonce, myList[2], tag)
+#         myList = encrypt(encryptedUsername) #nonce
+#         nonce = myList[1] 
+#         tag = myList[3]
+#         decryptedUsername = myList[0].decrypt(nonce, myList[2], tag)
         
-    return decryptedUsername
+#     return decryptedUsername
         
         
         
@@ -56,14 +56,15 @@ def retrieve_username(index):
     
 
 def main():
-<<<<<<< HEAD
-    override_to_encrypted()
-    #retrieve_username(0)
-    username = retrieve_username(0)
-    print(username)
-=======
     override_to_encrypted(0)
->>>>>>> 6f0f662b0ba01f7749432aeb170262f0ba87d8ab
+    # with open("users.json", "r") as file:
+    #     user = json.load(file)
+    #     encryptedUsername = user["user_details"][0]["username"]
+    # newObj = EncryptionAlgorithm(encryptedUsername)
+    # username = newObj.decrypt(username_info[0],encryptedUsername,username_info[1])
+    #retrieve_username(0)
+    # username = retrieve_username(0)
+    # print(username)
     #print(encrypted_username)
     # print(encrypted_email)
     # print(encrypted_password)
