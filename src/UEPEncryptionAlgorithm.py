@@ -2,7 +2,7 @@ import json
 from Crypto.Cipher import AES 
 from secrets import token_bytes
 
-class encryption:
+class EncryptionAlgorithm:
 
     def __init__(self, target):
         self.key = token_bytes(16)
