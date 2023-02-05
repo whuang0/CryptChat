@@ -1,3 +1,4 @@
+
 {
     "user_details": [
         {
@@ -6,9 +7,9 @@
             "password": "hanspassword"
         },
         {
-            "username": "Hans72",
+            "username": "1",
             "email": "Hans42@gmail.com",
-            "password": "hanspassword"
+            "password": "1"
         },
         {
             "username": "Hans72",

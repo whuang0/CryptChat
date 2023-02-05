@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign Up</title>
+    <title>Register</title>
     <style>
       body {
         background-color: #474951;
@@ -49,12 +49,31 @@
       <img src="Full.png" />
     </div>
     <footer>
-      <form action="save_to_json.py" method="post">
-        <input type="text" placeholder="Email" name="email">
-        <input type="text" placeholder="Username" name="username">
-        <input type="password" placeholder="Password" name="password">
-        <input id="submit-button" type="submit" value="Sign Up">
-        
+      <form action="save_to_login.php" method="post">
+        <form name="registrationForm" onsubmit="return validateForm()">
+            <input type="text" placeholder="Email" name="email">
+            <input type="text" placeholder="Username" name="username">
+            <input type="password" placeholder="Password" name="password">
+            <input id="submit-button" type="submit" value="Register">
+            <script>
+                function validateForm() {
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('POST', 'save_to_login.php', true);
+                  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                  xhr.onload = function() {
+                    var response = JSON.parse(this.responseText);
+                    if (response.success) {
+                        <form action="popup.html"></form>
+                        
+                    } else {
+                        alert(response.message);
+                    }
+                  };
+                  xhr.send($('form[name="registrationForm"]').serialize());
+                  return false;
+                }
+                </script>
+                </form>
       </form>
     </footer>
   </body>

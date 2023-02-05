@@ -1,37 +1,53 @@
-Login button checks a json file for username and password. If there is a username and password  in the json then go to friendpage.html.
-Otherwise output on the html screen that a error has occured.
 <!DOCTYPE html>
-  <html>
-      <body style = "background-color: #474951;">
+<html>
   <head>
     <title>Encrypted Chat Extension</title>
-    <div class = "header">
-      <center> <img src = "Full.png"
-        width = 350
-        height = 100/></center>
-    </div>  
-  </head>
-<body>
-  <div class = "main">  
-    <center><input id="input-message" type="text" placeholder="Username"></center> 
-    <center><input id="input-message" type="text" placeholder="Password"></center>
-    <center><button type = "form_button" class = "toggle-btn">Login</button></center>
-    <center><form action="register.html"><button type="submit" class="button">Register</button></form></center>
+    <style>
+      body {
+        background-color: #474951;
+        min-width: 500px;
+        max-width: 300%;
+        min-height: 400px;
+        max-height: none;
+        position: relative;
+        vertical-align: middle;
+      }
 
-    <form action="friendpage.html">
-    <button type="submit" class="button">Next</button>
-    </form>
-    <style type="text/css">
-  body {
-    min-width: 500px; /* your desired width */
-    max-width: 300%;
-    min-height: 400px;
-    max-height: none;
-    position: relative;
-    vertical-align:middle;
-  }
-  
-  </style>
+      .header {
+        text-align: center;
+      }
+
+      .error-message {
+        color: red;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="Full.png" width="350" height="100">
+    </div>
+    <div class="main">
+      <center>
+        <input id="usernameInput" type="text" placeholder="Username">
+      </center>
+      <center>
+        <input id="passwordInput" type="password" placeholder="Password">
+      </center>
+      <center>
+        <button id="loginButton" type="submit">Login</button>
+      </center>
+      <center>
+        <form action="register.html">
+          <button type="submit">Register</button>
+        </form>
+      </center>
+      <div id="errorMessage" class="error-message">Error: Login failed</div>
+    </div>
   </body>
 </html>
+
+
+
+
 
