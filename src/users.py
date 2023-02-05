@@ -24,6 +24,7 @@ class users:
 
             file_data = json.load(file)
             file_data["message_details"][0]["user1_sent_content"].append(str(ciphertext))
+            file_data["message_details"][0]["user2_received_content"].append(str(ciphertext))
 
             file.seek(0)
 

@@ -4,11 +4,13 @@
             "user1": "sharan",
             "user2": "andy",
             "user1_sent_content": [
-                "b'\\x90\\xcecR\\x91\\xa1\\x0e\\xec\\xb7\\xda\\x96\\x85\\xfci\\x07S\\xef\\xb7'"
+                "b'Xa\\x9a\\xf3\\xe1\\x19\\x86p>\\x85\\xd0\\rFj\\xffl\\x91\\x99'"
             ],
             "user1_received_content": [],
             "user2_sent_content": [],
-            "user2_received_content": []
+            "user2_received_content": [
+                "b'Xa\\x9a\\xf3\\xe1\\x19\\x86p>\\x85\\xd0\\rFj\\xffl\\x91\\x99'"
+            ]
         }
     ]
 }
