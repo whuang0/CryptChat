@@ -1,17 +1,33 @@
 import json
+from UEPEncryptionAlgorithm import *
+from Crypto.Cipher import AES 
+import json
+from testingjson import *
 
-def save_to_json(email, username, password):
-    user = {
-        "email": email,
-        "username": username,
-        "password": password
-    }
-    with open("users.json", "a") as file:
-        file.write(json.dumps(user))
-        file.write("\n")
+class users:
+    def __init__(self, id):
+        self.id = id
+        self.block = False
+    
+    def block(self):
+        self.block = True
 
-if __name__ == "__main__":
-    email = input("Email: ")
-    username = input("Username: ")
-    password = input("Password: ")
-    save_to_json(email, username, password)
+    def send_msg_to_be_encrypted(self, msg):
+        self.user1 = users(self.id)
+        self.msg = msg
+        encryptObj = EncryptionAlgorithm(msg)
+        nonce, ciphertext, tag = encryptObj.encrypt()
+
+        with open("msgs.json", 'r+') as file: 
+
+            file_data = json.load(file)
+            file_data["message_details"][0]["user1_sent_content"].append(str(ciphertext))
+
+            file.seek(0)
+
+            json.dump(file_data, file, indent = 4)
+
+def main():
+    exuser = users(0)
+    exuser.send_msg_to_be_encrypted('i love men so much')
+main()

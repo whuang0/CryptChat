@@ -1,0 +1,14 @@
+{
+    "message_details": [
+        {
+            "user1": "sharan",
+            "user2": "andy",
+            "user1_sent_content": [
+                "b'\\x90\\xcecR\\x91\\xa1\\x0e\\xec\\xb7\\xda\\x96\\x85\\xfci\\x07S\\xef\\xb7'"
+            ],
+            "user1_received_content": [],
+            "user2_sent_content": [],
+            "user2_received_content": []
+        }
+    ]
+}
