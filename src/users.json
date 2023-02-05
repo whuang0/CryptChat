@@ -1,17 +1,9 @@
 {
     "user_details": [
         {
-            "username": "sharan",
-            "email": "sharansaha07@gmail.com",
-            "password": "sharanp"
-        }
-    ]
-}{
-    "user_details": [
-        {
-            "username": "string1",
-            "email": "string2",
-            "password": "string3"
+            "username": "b'\\x89\\x87y\\xd3UI'",
+            "email": "b'v8\\xed\\xe0\\xf5\\xfa\\x95\\x9a\\xfc\\xc3pBh\\xa6\\xaf\\xe3\\xcb\\xb7\\xf37\\x89\\xd7'",
+            "password": "b'G_\\xf6\\xc0\\x06\\xe6\\t'"
         }
     ]
 }

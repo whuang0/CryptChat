@@ -27,6 +27,9 @@ class EncryptionAlgorithm:
         except:
             return False #cipher text is not authentic
 
+    def __str__(self):
+        return "hi"
+
 
         
     # def main():
