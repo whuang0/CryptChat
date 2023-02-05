@@ -12,8 +12,7 @@ class EncryptionAlgorithm:
         cipher = AES.new(self.key, AES.MODE_EAX) #cipher object
         nonce = cipher.nonce #the nonce 
         cipherText, tag = cipher.encrypt_and_digest(self.target.encode('ascii'))
-         
-        
+                 
         return nonce, cipherText, tag 
 
     def decrypt(self, nonce, cipherText, tag):
