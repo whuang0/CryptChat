@@ -2,7 +2,7 @@
 from Crypto.Cipher import AES 
 from secrets import token_bytes
 
-class MessageHandler: # Message Handler's purpose is to encrypt and decrypt messages.
+class MessageEncryptionAlgorithm: # Message Handler's purpose is to encrypt and decrypt messages.
     
    
     def __init__(self, message): # this is the constructor that sets up an instance of the object (self) to handle messages 

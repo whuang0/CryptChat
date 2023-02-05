@@ -1,29 +1,29 @@
-from encrypting import *
+from UEPEncryptionAlgorithm import *
 from Crypto.Cipher import AES 
 import json
 from testingjson import *
 
 def encrypt_credentials(username, email, password):
-    usernameObj = encryption(username) 
-    emailObj = encryption(email)
-    passwordObj = encryption(password)
+    usernameObj = EncryptionAlgorithm(username) 
+    emailObj = EncryptionAlgorithm(email)
+    passwordObj = EncryptionAlgorithm(password)
     nonce_username, cipherText_username, tag_username = usernameObj.encrypt() 
     nonce_email, cipher_email, tag_email = emailObj.encrypt()
     nonce_password, cipher_password, tag_password = passwordObj.encrypt() 
     return cipherText_username, cipher_email, cipher_password
 
 def encrypt_username(username):
-    usernameObj = encryption(username)
+    usernameObj = EncryptionAlgorithm(username)
     nonce_username, cipherText_username, tag_username = usernameObj.encrypt()
     return usernameObj, nonce_username, cipherText_username, tag_username
 
 def encrypt_email(email):
-    emailObj = encryption(email)
+    emailObj = EncryptionAlgorithm(email)
     nonce_email, cipherText_email, tag_email = emailObj.encrypt()
     return emailObj, nonce_email, cipherText_email, tag_email
 
 def encrypt_password(password):
-    passwordObj = encryption(password)
+    passwordObj = EncryptionAlgorithm(password)
     nonce_password, cipherText_password, tag_password = passwordObj.encrypt()
     return passwordObj, nonce_password, cipherText_password, tag_password
 
