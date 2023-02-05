@@ -6,4 +6,12 @@
             "password": "sharanp"
         }
     ]
+}{
+    "user_details": [
+        {
+            "username": "string1",
+            "email": "string2",
+            "password": "string3"
+        }
+    ]
 }

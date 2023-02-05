@@ -46,6 +46,17 @@ print(plainText1)
 
 plainText2 = encrypted_password[0].decrypt(encrypted_password[1], encrypted_password[2], encrypted_password[3])
 print(plainText2)
+
+def override_to_encrypted(): 
+    with open("users.json", 'r+') as file:
+        users = json.load(file)
+        users["user_details"][0].update({"username":"string1","email" : "string2", "password" : "string3"})
+        json.dump(users, file, indent = 4)
+        #print(users["user_details"][0]["username"])
+
+
+
+override_to_encrypted()
     
 
 
