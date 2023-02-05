@@ -11,15 +11,20 @@
         position: relative;
         vertical-align: middle;
       }
+      
+    .header {
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
 
-      .header {
-        text-align: center;
-      }
-
-      .header img {
-        width: 350px;
-        height: 100px;
-      }
+    .header img {
+      position: top;
+      width: 350px;
+      height: 100px;
+      margin: auto;
+    }
 
       footer {
         position: absolute;
@@ -42,17 +47,123 @@
         font-size: 16px;
         margin: 10px;
       }
+      #chat-display {
+        width: 75%;
+        height: 150px;
+        background-color: #ffffff;
+        margin: 10px auto;
+        padding: 10px;
+        overflow: auto;
+        border-radius: 10px;
+      }
+    
     </style>
   </head>
   <body>
     <div class="header">
       <img src="Full.png" />
     </div>
+    
     <footer>
-
+      <form>
+        <div id="username-display">
+          <label for="username-input">Username:</label>
+          <input id="username-input" type="text" name="username" placeholder="Enter your username">
+        </div>
+        <div id="chat-display"></div>
         <input id="input-message" type="text" name="message" placeholder="Type here to chat">
         <button id="send-button" type="submit">Send</button>
       </form>
     </footer>
+    
+    <script>
+      const form = document.forms[0];
+      const chatDisplay = document.getElementById("chat-display");
+      const usernameInput = document.getElementById("username-input");
+      const inputMessage = document.getElementById("input-message");
+      
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+        
+        const username = usernameInput.value;
+        let message = inputMessage.value;
+        
+        // Encrypt the message
+        const encodedMessage = new TextEncoder().encode(message);
+        const encryptionKey = await window.crypto.subtle.generateKey(
+          {
+            name: "AES-GCM",
+            length: 256
+          },
+          true,
+          ["encrypt", "decrypt"]
+        );
+        const iv = window.crypto.getRandomValues(new Uint8Array(12));
+       
+// Define a function to encrypt the message
+async function encrypt(plaintext) {
+// First, we need to generate a key
+const key = await window.crypto.subtle.generateKey(
+{ name: 'AES-GCM', length: 256 },
+true,
+['encrypt', 'decrypt']
+);
+
+// Next, we need to encrypt the plaintext using the key
+const ciphertextArrayBuffer = await window.crypto.subtle.encrypt(
+{
+name: 'AES-GCM',
+iv,
+tagLength: 128,
+},
+key,
+new TextEncoder().encode(plaintext)
+);
+
+// Convert the ciphertextArrayBuffer to a base64 string
+const ciphertext = new Uint8Array(ciphertextArrayBuffer);
+const ciphertextBase64 = new Buffer(ciphertext).toString('base64');
+
+// Return the encrypted message
+return ciphertextBase64;
+}
+
+// Define a function to decrypt the message
+async function decrypt(ciphertextBase64) {
+// First, we need to generate a key
+const key = await window.crypto.subtle.generateKey(
+{ name: 'AES-GCM', length: 256 },
+true,
+['encrypt', 'decrypt']
+);
+
+// Next, we need to convert the ciphertextBase64 back to an ArrayBuffer
+const ciphertext = new Uint8Array(
+new Buffer(ciphertextBase64, 'base64')
+);
+
+// Finally, we can decrypt the message using the key
+const plaintextArrayBuffer = await window.crypto.subtle.decrypt(
+{
+name: 'AES-GCM',
+iv,
+tagLength: 128,
+},
+key,
+ciphertext
+);
+
+// Convert the plaintextArrayBuffer to a string
+const plaintext = new TextDecoder().decode(plaintextArrayBuffer);
+const newMessage = document.createElement("p");
+newMessage.innerText = `${username}: ${plaintext}`;
+chatDisplay.appendChild(newMessage);
+
+    // Clear the input field
+    inputMessage.value = "";
+    // Scroll to the bottom of the chat display
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
+});           
+</script>
   </body>
 </html>

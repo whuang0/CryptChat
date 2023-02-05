@@ -1,80 +1,69 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Register</title>
+    <title>Encrypted Chat Extension</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $.ajax({
+            type: "GET",
+            url: "save.php",
+            success: function(data){
+              $("#response").html(data);
+            }
+          });
+        });
+      </script>
     <style>
       body {
         background-color: #474951;
         min-width: 500px;
+        max-height: 500px;
+        max-width: 500px;
         min-height: 400px;
         max-height: none;
         position: relative;
         vertical-align: middle;
       }
+      
 
       .header {
         text-align: center;
       }
 
-      .header img {
-        width: 350px;
-        height: 100px;
-      }
-
-      footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-      }
-
-      input[type=text], input[type=password] {
-        width: 75%;
-        height: 40px;
-        padding: 5px;
-        font-size: 16px;
-        margin: 10px;
-      }
-
-      #submit-button {
-        width: 20%;
-        height: 40px;
-        font-size: 16px;
-        margin: 10px;
+      .error-message {
+        color: red;
+        display: none;
       }
     </style>
   </head>
   <body>
+    
     <div class="header">
-      <img src="Full.png" />
+      <img src="Full.png" width="350" height="100">
     </div>
-    <footer>
-      <form action="save_to_login.php" method="post">
-        <form name="registrationForm" onsubmit="return validateForm()">
-            <input type="text" placeholder="Email" name="email">
-            <input type="text" placeholder="Username" name="username">
-            <input type="password" placeholder="Password" name="password">
-            <input id="submit-button" type="submit" value="Register">
-            <script>
-                function validateForm() {
-                  var xhr = new XMLHttpRequest();
-                  xhr.open('POST', 'save_to_login.php', true);
-                  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                  xhr.onload = function() {
-                    var response = JSON.parse(this.responseText);
-                    if (response.success) {
-                        <form action="popup.html"></form>
-                        
-                    } else {
-                        alert(response.message);
-                    }
-                  };
-                  xhr.send($('form[name="registrationForm"]').serialize());
-                  return false;
-                }
-                </script>
-                </form>
+    <div class="main">
+        <form action="http://localhost/demo/save.php" method="post">
+        <center>
+          <input id="email" type="text" placeholder="Email" name="email">
+        </center>
+        <center>
+          <input id="username" type="text" placeholder="Username" name="username">
+        </center>
+        <center>
+          <input id="password" type="password" placeholder="Password" name="password">
+        </center>
+        <center>
+          <button id="registerButton" type="submit">Register</button>
+        </center>
       </form>
-    </footer>
+      <form action="popup.html">
+        <center>
+            <button type="submit">back</button>
+        </center>
+      </form>
+      <div id="response"></div>
+
+    </div>
   </body>
 </html>

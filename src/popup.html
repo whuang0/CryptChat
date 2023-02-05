@@ -6,7 +6,8 @@
       body {
         background-color: #474951;
         min-width: 500px;
-        max-width: 300%;
+        max-height: 500px;
+        max-width: 500px;
         min-height: 400px;
         max-height: none;
         position: relative;
@@ -29,25 +30,59 @@
     </div>
     <div class="main">
       <center>
-        <input id="usernameInput" type="text" placeholder="Username">
+        
+        <input id="usernameInput" type="text" placeholder ="Username">
       </center>
       <center>
         <input id="passwordInput" type="password" placeholder="Password">
       </center>
       <center>
-        <button id="loginButton" type="submit">Login</button>
+        <button id="loginButton">Login</button>
       </center>
       <center>
         <form action="register.html">
           <button type="submit">Register</button>
         </form>
       </center>
+      <form action="chatpage.html">
+        <button type="submit">Chatroom</button>
+      </form>
       <div id="errorMessage" class="error-message">Error: Login failed</div>
     </div>
+
+    <script>
+      const errorMessage = document.getElementById("errorMessage");
+      const usernameInput = document.getElementById("usernameInput");
+      const passwordInput = document.getElementById("passwordInput");
+      const loginButton = document.getElementById("loginButton");
+
+      const users = [
+        {
+          username: "sharan",
+          password: "sharanp",
+        },
+      ];
+
+      loginButton.addEventListener("click", () => {
+        const enteredUsername = usernameInput.value;
+        const enteredPassword = passwordInput.value;
+
+        let isUserFound = false;
+
+        users.forEach((user) => {
+          if (
+            user.username === enteredUsername &&
+            user.password === enteredPassword
+          ) {
+            isUserFound = true;
+            window.location.href = "friendpage.html";
+          }
+        });
+
+        if (!isUserFound) {
+          errorMessage.style.display = "block";
+        }
+      });
+    </script>
   </body>
 </html>
-
-
-
-
-
