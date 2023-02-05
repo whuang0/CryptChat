@@ -1,9 +1,9 @@
 {
     "user_details": [
         {
-            "username": "sharan",
-            "email": "sharanlovesen",
-            "password": "ilovemen"
+            "username": "b'\\x9a[\\xa2\\x8f\\xb0\\x17'",
+            "email": "b'\\xfd\\x80\\x07\\xf7\\xcf\\x08\\xc6\\\\^\\x0eNp\\xb9\\x9f\\xa7+'",
+            "password": "b'\\xfa\\xbb2\\xee}\\x11AQ'"
         }
     ]
 }
