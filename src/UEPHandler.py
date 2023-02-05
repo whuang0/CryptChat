@@ -16,10 +16,10 @@ def get_credentials(index):
         password = users["user_details"][index]["password"]
         return [username, email, password]
 
-def override_to_encrypted(): 
-    encrypted_username = encrypt(get_credentials(0)[0])
-    encrypted_email = encrypt(get_credentials(0)[1])
-    encrypted_password = encrypt(get_credentials(0)[2])
+def override_to_encrypted(index): 
+    encrypted_username = encrypt(get_credentials(index)[0])
+    encrypted_email = encrypt(get_credentials(index)[1])
+    encrypted_password = encrypt(get_credentials(index)[2])
     with open("users.json", 'r+') as file:
         users = json.load(file)
         file.seek(0)
@@ -56,10 +56,14 @@ def retrieve_username(index):
     
 
 def main():
+<<<<<<< HEAD
     override_to_encrypted()
     #retrieve_username(0)
     username = retrieve_username(0)
     print(username)
+=======
+    override_to_encrypted(0)
+>>>>>>> 6f0f662b0ba01f7749432aeb170262f0ba87d8ab
     #print(encrypted_username)
     # print(encrypted_email)
     # print(encrypted_password)

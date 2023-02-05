@@ -8,9 +8,11 @@ class users:
     def __init__(self, id):
         self.id = id
         self.block = False
+        self.blocked_users = [] #ids of blocked users 
     
-    def block(self):
-        self.block = True
+    
+    def block(blocked_user):
+        self.blocked_users.append(blocked_user.id)
 
     def send_msg_to_be_encrypted(self, msg):
         self.user1 = users(self.id)
